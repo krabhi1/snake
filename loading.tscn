@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7rgedh4d7qwl"]
+
+[ext_resource type="Script" path="res://loading.gd" id="1_fwu87"]
+[ext_resource type="FontFile" uid="uid://7tdhnaelrkla" path="res://assets/IrishGrover-Regular.ttf" id="1_plak4"]
+[ext_resource type="Texture2D" uid="uid://cqj5ov33360da" path="res://assets/snake.png" id="1_r3y11"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m3niu"]
+font = ExtResource("1_plak4")
+font_size = 48
+font_color = Color(0.0823529, 1, 0, 1)
+shadow_size = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_boec5"]
+font = ExtResource("1_plak4")
+font_size = 20
+shadow_size = 0
+
+[node name="Loading" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fwu87")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 600.0
+offset_bottom = 600.0
+color = Color(0, 0.172549, 0.0666667, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 37.0
+offset_right = 371.0
+offset_bottom = 95.0
+text = "Snake"
+label_settings = SubResource("LabelSettings_m3niu")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 488.0
+offset_right = 338.0
+offset_bottom = 512.0
+text = "Loading"
+label_settings = SubResource("LabelSettings_boec5")
+
+[node name="Snake" type="Sprite2D" parent="."]
+position = Vector2(320, 280)
+scale = Vector2(0.421667, 0.421667)
+texture = ExtResource("1_r3y11")
+
+[node name="ProgressBar" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 456.0
+offset_right = 476.0
+offset_bottom = 476.0
+color = Color(0.00392157, 0.0156863, 0, 1)
+
+[node name="Bar" type="ColorRect" parent="ProgressBar"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 20.0
+color = Color(0.105882, 0.788235, 0.0470588, 1)

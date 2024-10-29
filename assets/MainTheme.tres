@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dyttrn2pjq2kk"]
+
+[ext_resource type="FontFile" uid="uid://7tdhnaelrkla" path="res://assets/IrishGrover-Regular.ttf" id="1_k62ru"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8a71r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t60ce"]
+bg_color = Color(0.230411, 0.34201, 0.887138, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiagp"]
+bg_color = Color(0.262228, 0.385449, 0.919325, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0r7f"]
+bg_color = Color(0.189342, 0.283084, 0.827681, 1)
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_k62ru")
+Button/styles/disabled = null
+Button/styles/focus = SubResource("StyleBoxEmpty_8a71r")
+Button/styles/hover = SubResource("StyleBoxFlat_t60ce")
+Button/styles/normal = SubResource("StyleBoxFlat_hiagp")
+Button/styles/pressed = SubResource("StyleBoxFlat_s0r7f")
+Label/colors/font_color = Color(0.0823529, 1, 0, 1)
+Label/fonts/font = ExtResource("1_k62ru")

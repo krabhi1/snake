@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpcxet2et6f8q"]
+
+[ext_resource type="Script" path="res://playground.gd" id="1_q7jac"]
+[ext_resource type="Texture2D" uid="uid://nt63vpt7ridr" path="res://assets/point.png" id="1_qormt"]
+[ext_resource type="Texture2D" uid="uid://be58dv5x3kwit" path="res://assets/board.png" id="2_e5yug"]
+
+[node name="playground" type="Node2D"]
+script = ExtResource("1_q7jac")
+
+[node name="background" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 1)
+scale = Vector2(600, 600)
+texture = ExtResource("1_qormt")
+offset = Vector2(0.5, 0.5)
+
+[node name="board" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_e5yug")
+offset = Vector2(500, 500)
+
+[node name="head" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.439216, 0.439216, 1)
+scale = Vector2(25, 25)
+texture = ExtResource("1_qormt")
+offset = Vector2(0.5, 0.5)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.22
+autostart = true
+
+[connection signal="child_entered_tree" from="Timer" to="." method="_on_timer_child_entered_tree"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
