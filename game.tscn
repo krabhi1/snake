@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxj83hxxcdb5n"]
+[gd_scene load_steps=7 format=3 uid="uid://bxj83hxxcdb5n"]
 
 [ext_resource type="Texture2D" uid="uid://bm5xwhj6iidm8" path="res://assets/menu_button.png" id="1_3gli0"]
 [ext_resource type="PackedScene" uid="uid://bpcxet2et6f8q" path="res://playground.tscn" id="1_juge5"]
+[ext_resource type="PackedScene" uid="uid://dbadm1n3hum2t" path="res://game_option_dialog.tscn" id="3_5fcsb"]
+[ext_resource type="PackedScene" uid="uid://dpyvv2tda5fal" path="res://game_over_dialog.tscn" id="4_0xe6x"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y8hf1"]
 font_size = 20
@@ -64,3 +66,17 @@ flat = true
 
 [node name="playground" parent="." instance=ExtResource("1_juge5")]
 position = Vector2(49, 75)
+
+[node name="GameOptionDialog" parent="." instance=ExtResource("3_5fcsb")]
+visible = false
+offset_left = 85.0
+offset_top = 115.0
+offset_right = 508.0
+offset_bottom = 426.0
+
+[node name="GameOverDialog" parent="." instance=ExtResource("4_0xe6x")]
+visible = false
+offset_left = 82.0
+offset_top = 115.0
+offset_right = 505.0
+offset_bottom = 426.0
