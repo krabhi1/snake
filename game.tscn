@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxj83hxxcdb5n"]
+[gd_scene load_steps=8 format=3 uid="uid://bxj83hxxcdb5n"]
 
 [ext_resource type="Texture2D" uid="uid://bm5xwhj6iidm8" path="res://assets/menu_button.png" id="1_3gli0"]
 [ext_resource type="PackedScene" uid="uid://bpcxet2et6f8q" path="res://playground.tscn" id="1_juge5"]
+[ext_resource type="Script" path="res://game.gd" id="1_miqks"]
 [ext_resource type="PackedScene" uid="uid://dbadm1n3hum2t" path="res://game_option_dialog.tscn" id="3_5fcsb"]
 [ext_resource type="PackedScene" uid="uid://dpyvv2tda5fal" path="res://game_over_dialog.tscn" id="4_0xe6x"]
 
@@ -12,6 +13,7 @@ font_color = Color(0.117647, 0.752941, 0, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d5hbg"]
 
 [node name="Game" type="Node"]
+script = ExtResource("1_miqks")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -51,14 +53,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label2" type="Label" parent="UI/Header/HBoxContainer"]
+[node name="score" type="Label" parent="UI/Header/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "score: 100"
 label_settings = SubResource("LabelSettings_y8hf1")
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="UI/Header/HBoxContainer"]
+[node name="Option" type="Button" parent="UI/Header/HBoxContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_d5hbg")
 icon = ExtResource("1_3gli0")
@@ -80,3 +82,5 @@ offset_left = 82.0
 offset_top = 115.0
 offset_right = 505.0
 offset_bottom = 426.0
+
+[connection signal="pressed" from="UI/Header/HBoxContainer/Option" to="." method="_on_option_pressed"]

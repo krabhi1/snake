@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7rgedh4d7qwl"]
+[gd_scene load_steps=8 format=3 uid="uid://b7rgedh4d7qwl"]
 
 [ext_resource type="Script" path="res://loading.gd" id="1_fwu87"]
 [ext_resource type="FontFile" uid="uid://7tdhnaelrkla" path="res://assets/IrishGrover-Regular.ttf" id="1_plak4"]
@@ -12,8 +12,14 @@ shadow_size = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_boec5"]
 font = ExtResource("1_plak4")
-font_size = 20
 shadow_size = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfk70"]
+bg_color = Color(0.00392157, 0.0156863, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3p2l"]
+bg_color = Color(0.105882, 0.788235, 0.0470588, 1)
+corner_detail = 1
 
 [node name="Loading" type="Control"]
 layout_mode = 3
@@ -41,10 +47,10 @@ label_settings = SubResource("LabelSettings_m3niu")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 264.0
-offset_top = 488.0
-offset_right = 338.0
-offset_bottom = 512.0
+offset_left = 301.0
+offset_top = 529.0
+offset_right = 375.0
+offset_bottom = 554.0
 text = "Loading"
 label_settings = SubResource("LabelSettings_boec5")
 
@@ -53,16 +59,15 @@ position = Vector2(320, 280)
 scale = Vector2(0.421667, 0.421667)
 texture = ExtResource("1_r3y11")
 
-[node name="ProgressBar" type="ColorRect" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 176.0
-offset_top = 456.0
-offset_right = 476.0
-offset_bottom = 476.0
-color = Color(0.00392157, 0.0156863, 0, 1)
+offset_left = 192.0
+offset_top = 496.0
+offset_right = 492.0
+offset_bottom = 516.0
+theme_override_styles/background = SubResource("StyleBoxFlat_rfk70")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r3p2l")
+rounded = true
+show_percentage = false
 
-[node name="Bar" type="ColorRect" parent="ProgressBar"]
-layout_mode = 0
-offset_right = 200.0
-offset_bottom = 20.0
-color = Color(0.105882, 0.788235, 0.0470588, 1)
+[connection signal="value_changed" from="ProgressBar" to="." method="_on_progress_bar_value_changed"]

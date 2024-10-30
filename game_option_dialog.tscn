@@ -65,7 +65,7 @@ grow_horizontal = 2
 text = "Paused"
 label_settings = SubResource("LabelSettings_nkbnn")
 
-[node name="Button" type="Button" parent="."]
+[node name="Close" type="Button" parent="."]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 1
@@ -126,4 +126,8 @@ theme_override_fonts/font = ExtResource("3_qsc86")
 theme_override_font_sizes/font_size = 24
 text = "Exit"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

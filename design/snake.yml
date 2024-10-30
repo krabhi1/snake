@@ -1,0 +1,117 @@
+loading:
+  play:
+    - open Gameplay Screen
+    - on LRTB key click start snake movement:
+        - on options button clicked:
+            - pause the game
+            - show Option Menu:
+                - resume:
+                    - start with LRTB key click
+                - restart
+                - Main Menu
+                - Exit
+        - Exit close button:
+            - $resume
+
+        - on collide with boundary or self
+          - stop game
+          - show GameOver Menu
+          - $restart
+          - $main menu
+          - $Exit
+  Difficulty:
+    - open Difficulty Screen
+      - a slider to set the speed of the snake
+  Exit:
+    - exit the game
+
+design step:
+  - design Loading screen:
+      - assets:
+          - fonts: ["irish grover"]
+          - images: ["snake"]
+  - design Main screen:
+      - assets:
+          - fonts: ["irish grover"]
+          - images: ["snake", "grass"]
+      - styling
+        - build a theme
+      - design Difficulty dialog
+  - design Gameplay screen:
+      - hud and board:
+          - design HUD
+          - design playground
+      - design Options Dialog
+      - design GameOver Dialog
+
+GUI logic step:
+  flow:
+    screen:
+      Loading: # [x]
+        Main: # []
+          Game: # []
+    dialog:
+      Loading:
+        Main:
+          - Game:
+              - OptionDialog
+              - GameOverDialog
+          - DifficultyDialog
+
+Action:
+  Loading:
+    - Loading complete:
+        - Go to Main Screen # [x]
+  Main:
+    on Play button click:
+      Go to Game Screen: # [x]
+        - start the game on LRTB key click
+        - on options button click:
+            - pause the game
+            - show Option Menu:
+                close button: 
+                  - send signal # [x]
+                  - hide the dialog # [x]
+                resume:
+                  - send  signal # [x]
+                  - hide the dialog # [x]
+                  - start with LRTB key click
+                restart:
+                  - send signal # [x]
+                  - hide the dialog # [x]
+                Main Menu:
+                  - Go to Main Screen # [x]
+                  - hide the dialog # [x]
+                Exit:
+                  - Exit the game # [x]
+        - on game over:
+            - show GameOver Menu:
+                restart:
+                  - restart the game
+                Main Menu:
+                  - Go to Main Screen
+                Exit:
+                  - Exit the game
+    on Difficulty button click:
+      Show Difficulty Dialog: # [x]
+        - on slider change:
+            - set the speed of the snake # [x]
+        - on close button click:
+            - hide the dialog # [x]
+
+    on Exit button click:
+      - Exit the game # [x]
+
+Global State:
+  - speed: 1 # 1-10
+
+Game logic step:
+
+todo:
+  - replace custom progressbar with build-in progressbar # [x]
+
+GameOption Dialog:
+  signal:
+    - resume
+    - restart
+    - dialog_close
