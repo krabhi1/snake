@@ -84,3 +84,7 @@ offset_right = 505.0
 offset_bottom = 426.0
 
 [connection signal="pressed" from="UI/Header/HBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="close" from="GameOptionDialog" to="." method="_on_game_option_dialog_close"]
+[connection signal="restart" from="GameOptionDialog" to="." method="_on_game_option_dialog_restart"]
+[connection signal="resume" from="GameOptionDialog" to="." method="_on_game_option_dialog_resume"]
+[connection signal="restart" from="GameOverDialog" to="." method="_on_game_over_dialog_restart"]

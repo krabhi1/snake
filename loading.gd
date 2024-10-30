@@ -4,11 +4,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	$ProgressBar.value+=5
-	Global.speed+=1
-	print("Speed: ",Global.speed)
 	pass
 
 # func setProgress(percentage:float):

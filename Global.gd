@@ -1,6 +1,6 @@
 extends  Node
 
-var speed=1; # 5 cells per second
+var speed=4; # 5 cells per second
 var score=0;
 var highscore=0;
 

@@ -105,7 +105,19 @@ Action:
 Global State:
   - speed: 1 # 1-10
 
-Game logic step:
+Game logic:
+  restart:
+  pause:
+  resume:
+  snake:
+    - move:
+      - setup key WASD or LRTB # [x]
+      - inital dir=(0,0) 
+      - update dir on key press:
+        - change dir except opposite direction
+    - grow:
+    - collide:
+    - eat:
 
 todo:
   - replace custom progressbar with build-in progressbar # [x]

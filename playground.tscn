@@ -12,15 +12,18 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_e5yug")
 offset = Vector2(500, 500)
 
-[node name="head" type="Sprite2D" parent="."]
+[node name="Snake" type="Node2D" parent="."]
+
+[node name="Head" type="Sprite2D" parent="Snake"]
 self_modulate = Color(1, 0.439216, 0.439216, 1)
+position = Vector2(50, 50)
 scale = Vector2(25, 25)
 texture = ExtResource("1_qormt")
 offset = Vector2(0.5, 0.5)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.22
-autostart = true
-
-[connection signal="child_entered_tree" from="Timer" to="." method="_on_timer_child_entered_tree"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Segment" type="Sprite2D" parent="Snake" groups=["snake_body"]]
+self_modulate = Color(0.31267, 0.696887, 0.448503, 1)
+position = Vector2(25, 50)
+scale = Vector2(25, 25)
+texture = ExtResource("1_qormt")
+offset = Vector2(0.5, 0.5)
