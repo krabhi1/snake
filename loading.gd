@@ -18,7 +18,6 @@ func _process(_delta: float) -> void:
 
 
 func _on_progress_bar_value_changed(value:float) -> void:
-	print("Value changed to: ",value)
 	if value==100:
 		#TODO: wait for 1 sec
 		#goto next scene

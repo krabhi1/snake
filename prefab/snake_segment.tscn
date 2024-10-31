@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://buuapoa31ntil"]
+
+[ext_resource type="Texture2D" uid="uid://nt63vpt7ridr" path="res://assets/point.png" id="1_ap2k4"]
+
+[node name="Segment" type="Sprite2D" groups=["snake_body"]]
+self_modulate = Color(0.31267, 0.696887, 0.448503, 1)
+scale = Vector2(25, 25)
+texture = ExtResource("1_ap2k4")
+offset = Vector2(0.5, 0.5)

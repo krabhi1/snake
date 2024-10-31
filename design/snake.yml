@@ -69,7 +69,7 @@ Action:
         - on options button click:
             - pause the game
             - show Option Menu:
-                close button: 
+                close button:
                   - send signal # [x]
                   - hide the dialog # [x]
                 resume:
@@ -104,6 +104,7 @@ Action:
 
 Global State:
   - speed: 1 # 1-10
+  - game_state: [standing, running, paused, gameover]
 
 Game logic:
   restart:
@@ -111,10 +112,12 @@ Game logic:
   resume:
   snake:
     - move:
-      - setup key WASD or LRTB # [x]
-      - inital dir=(0,0) 
-      - update dir on key press:
-        - change dir except opposite direction
+        - setup key WASD or LRTB # [x]
+        - inital dir=(1,0) but state=standing
+        - update dir on key press:
+            - change dir except opposite direction
+        - isDirectionChanged & STANDING:
+            - change state to RUNNING
     - grow:
     - collide:
     - eat:
@@ -127,3 +130,8 @@ GameOption Dialog:
     - resume
     - restart
     - dialog_close
+
+How To:
+  - to show only one dialog at a time:
+      - hide all dialog before showing the new dialog
+      - a simple dialog manager can be used to manage the dialog

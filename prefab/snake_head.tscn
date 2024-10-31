@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1yv3ownvwwum"]
+
+[ext_resource type="Texture2D" uid="uid://nt63vpt7ridr" path="res://assets/point.png" id="1_n7wj5"]
+
+[node name="Head" type="Sprite2D"]
+self_modulate = Color(1, 0.439216, 0.439216, 1)
+scale = Vector2(25, 25)
+texture = ExtResource("1_n7wj5")
+offset = Vector2(0.5, 0.5)

@@ -83,7 +83,12 @@ offset_top = 115.0
 offset_right = 505.0
 offset_bottom = 426.0
 
+[connection signal="pause" from="." to="playground" method="_on_game_pause"]
+[connection signal="restart" from="." to="playground" method="_on_game_restart"]
+[connection signal="resume" from="." to="playground" method="_on_game_resume"]
 [connection signal="pressed" from="UI/Header/HBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="food_eaten" from="playground" to="." method="_on_playground_food_eaten"]
+[connection signal="gameover" from="playground" to="." method="_on_playground_gameover"]
 [connection signal="close" from="GameOptionDialog" to="." method="_on_game_option_dialog_close"]
 [connection signal="restart" from="GameOptionDialog" to="." method="_on_game_option_dialog_restart"]
 [connection signal="resume" from="GameOptionDialog" to="." method="_on_game_option_dialog_resume"]

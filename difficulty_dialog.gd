@@ -4,6 +4,7 @@ extends Panel
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$HBoxContainer/HSlider.value=remap(Global.speed,2,10,0,100)
+	print("Difficulty Dialog ready")
 	pass # Replace with function body.
 
 
